@@ -1,0 +1,29 @@
+
+
+n=int(input("Enter size"))
+a=[]
+
+print("Elements dalo")
+
+for i in range(0,n):
+    m=int(input())
+    a.append(m)
+    
+a.sort()
+print(a)
+s1=0
+s2=0
+if(abs(a[0])<abs(a[n-1])):
+    for i in range(0,n):
+        if(a[i]>0):
+            s1+=a[i]
+        elif(a[i]<0):
+            s2+=a[i]
+elif(abs(a[0])>abs(a[n-1])):
+    for i in range(0,n):
+        if(a[i]<0):
+            s1+=a[i]
+        elif(a[i]>0):
+            s2+=a[i]
+    
+print(abs(s1+s2))    
