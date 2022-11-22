@@ -1,0 +1,38 @@
+
+
+n=int(input("Enter n"))
+a=[]
+
+print("Enter dust level ")
+
+for i in range(0,n):
+    m=int(input())
+    a.append(m)
+
+
+
+count=0
+
+for i in range(0,n-1):
+    if(a[i+1]==0 and a[i]!=0):
+        a[i]=a[i]-1
+        a[i+1]=a[i+1]+1
+        count+=1
+
+
+
+
+for i in range(0,n-1):
+    
+    
+    if(a[i]!=0):
+        while(a[i]!=0):
+            a[i]-=1
+            a[n-1]+=1
+            count+=1
+    
+        
+
+print(count)
+
+
