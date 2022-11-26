@@ -1,0 +1,19 @@
+n=int(input("Enter size"))
+
+a=[]
+
+print("Enter elements")
+
+for i in range(0,n):
+    m=int(input())
+    a.append(m)
+
+max1=0
+
+for i in range(0,n):
+    max1=max(max1,a[i])
+    
+a.sort()
+
+b=max1-a[0]
+print(b)
