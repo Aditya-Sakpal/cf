@@ -1,0 +1,32 @@
+
+
+n=int(input("Enter size"))
+
+a=[]
+
+print("Enter elements")
+
+for i in range(0,n):
+    
+    m=int(input());
+    
+    # if(m!=0 or m!=1):
+    #     print("Invalid input")
+    #     break
+    
+    a.append(m);
+
+count=0
+
+for i in range(0,n):
+    
+    if(a[i]==1 and n!=1 and i!=n-1):
+        count += 1    
+        for j in range(i,n):
+            if(a[j]==1):
+                a[j]=0
+            else:
+                a[j]=1
+
+print(count)
+
