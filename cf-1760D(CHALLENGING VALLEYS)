@@ -1,0 +1,27 @@
+n=int(input("Enter size"))
+a=[]
+print("Enter elements")
+for i in range(0,n):
+    m=int(input())
+    a.append(m)
+
+f=0
+inc=0
+dec=0
+
+for i in range(0,n):
+    if(a[i]>a[i-1]):
+        inc +=1
+    elif(a[i]<a[i-1]):
+        dec +=1
+        if(inc>0):
+            f +=1
+            break
+
+if(f==0):
+    print("YES")
+else:
+    print("NO")
+
+
+
