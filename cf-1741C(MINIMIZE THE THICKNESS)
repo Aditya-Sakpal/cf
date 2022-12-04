@@ -1,0 +1,44 @@
+t=int(input())
+s=t
+z=[]
+while(t>0):
+    n=int(input())
+    a=list(map(int,input().split()))[:n]
+    b=[]
+    b.append(a[0])
+    # ans=n
+    for i in range(0,n):
+        if(i!=n-1):
+            a[i+1]+=a[i]  
+            b.append(a[i+1])    
+    m=2
+    ans=n
+    # print(b)
+    for j in range(0,n):
+        for k in range(0,n):
+            if((b[j]*m)==b[k]):
+                ans=k-1
+                # print(b[k])
+                break
+        if(ans!=n):
+            break
+    
+    z.append(ans)        
+        # if z:
+            # break
+            
+                
+    # if not z:
+    #     z.append(n)
+    t-=1
+print(" ")   
+try:
+    for i in range(0,s):
+        print(z[i])
+except IndexError:
+    print("h")
+    
+    
+    
+    
+    
