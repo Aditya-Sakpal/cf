@@ -1,0 +1,88 @@
+import math
+t=int(input())
+cost=[]
+m=[]
+
+str1="abcdefghijklmnopqrstuvwxyz"
+l6=[]
+while(t>0):
+    x=[]
+    l3=[]
+    a=input()
+    
+    v=x
+    min1=int((format(ord(a[0])-96)))
+    for i in range(len(a)):
+        x.append(int((format(ord(a[i])-96))))
+        min1=min(min1,int((format(ord(a[i])-96))))
+    
+    n=abs(int((format(ord(a[0])-96)))-int((format(ord(a[len(a)-1])-96))))
+    
+    cost.append(n)
+    sum1=0
+    count1=1
+    if(int((format(ord(a[0])-96)))<=min1):
+        sortl=x
+        sortl.sort()
+        # print(sortl)
+        for i in range(0,len(sortl)):
+            sum1+=abs(sortl[i]-sortl[i+1])
+            count1+=1
+            if(sum1==n):
+                v=i+1
+                break
+        sum2=0    
+        for i in range(v,len(sortl)):
+            if(i==len(sortl)-1):
+                break
+            sum2+=sortl[i]-sortl[i+1]
+            if(sum2==0):
+                count1+=1
+        m.append(count1)
+        l5=[]
+        for i in range(0,len(str1)):
+            for j in range(0,len(a)):
+                if(str1[i]==a[j]):
+                    l5.append(j+1)
+        l6.append(l5)
+    else:
+        l4=[]
+        l=x[0]
+        # print(l)
+        x.sort(reverse=True)
+        # print(x)
+        
+        for i in range(0,len(x)):
+            if(l==x[i]):
+                for j in range(i,len(x)):
+                    sum1+=abs(x[j]-x[j+1])
+                    count1+=1
+                    if(sum1==n or j==n-1):
+                        break
+            
+        y=a[0]
+        l2=sorted(a,reverse=True)
+        
+        for i in range(0,len(l2)):
+            if(y==l2[i]):
+                for j in range(i,len(l2)):
+                    l3.append(l2[j])
+        
+        for i in range(0,len(l3)):
+            for j in range(0,len(a)):
+                if(l3[i]==a[j]):
+                    l4.append(j+1)
+        
+         
+        l6.append(l4)
+        m.append(count1)            
+       
+    
+    
+    t-=1
+for i in range(0,len(m)):
+    print(str(cost[i])+" "+str(m[i]))
+    
+    print(*l6[i])
+    
+    
