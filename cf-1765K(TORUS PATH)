@@ -1,0 +1,29 @@
+n=int(input())
+if(n<2):
+    print("Invalid input")
+    exit(1)
+    
+a=[]
+for i in range(0,n):
+    temp=[]
+    temp=list(map(int,input().split()))[:n]
+    a.append(temp)
+
+
+sum1=0
+if n!=2:
+    for i in range(0,n):
+        for j in range(0,n):
+            sum1+=a[i][j]
+    print(sum1)            
+else:
+    count=0
+    for i in range(0,n):
+        for j in range(0,n):
+            if(j==1 and count==1):
+                sum1+=a[i][j]
+            if(j==1):
+                count+=1
+                continue
+            sum1+=a[i][j]
+    print(sum1)            
